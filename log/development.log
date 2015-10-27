@@ -1,0 +1,31 @@
+
+
+Started GET "/" for ::1 at 2015-10-27 11:24:41 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/railties-4.2.4/lib/rails/templates/rails/welcome/index.html.erb (2.4ms)
+Completed 200 OK in 25ms (Views: 15.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (1.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.5ms)[0m  select sqlite_version(*)
+  [1m[36m (1.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateArticles (20151027102900)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151027102900"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mArticle Load (1.8ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  [1m[35mArticle Load (0.3ms)[0m  SELECT "articles".* FROM "articles"
+  [1m[36m (0.6ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "articles" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Sample Article Title"], ["body", "This is the text for my article, woo hoo!"], ["created_at", "2015-10-27 10:52:31.387781"], ["updated_at", "2015-10-27 10:52:31.387781"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mArticle Load (1.5ms)[0m  SELECT "articles".* FROM "articles"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "articles" ("body", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["body", "I have a bad feeling about this"], ["title", "Obi-Wan Kenobi"], ["created_at", "2015-10-27 11:08:33.843194"], ["updated_at", "2015-10-27 11:08:33.843194"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "articles" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Lorem ipsum"], ["body", "Lorem ipsum dolor sit amet"], ["created_at", "2015-10-27 11:09:31.129490"], ["updated_at", "2015-10-27 11:09:31.129490"]]
+  [1m[35m (9.1ms)[0m  commit transaction
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
