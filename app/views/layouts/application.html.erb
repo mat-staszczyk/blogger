@@ -7,7 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <div class="header">
+    <ul class="nav">
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "Categories", tags_path %></li>
+      <% if logged_in? %>
+        <li><%= link_to "Authors", authors_path %></li>
+        <li><%= link_to "New Author", new_author_path %></li>
+      <% end %>
+      <li></li>
+    </ul>
+  </div>
   <p class="flash"><%= flash.notice %></p>
   <%= yield %>
   <hr>
