@@ -1,0 +1,7 @@
+<h1>Most popular articles</h1>
+
+<ol>
+  <% @articles.each do |article| %>
+    <li><%= link_to article.title, article_path(article) %> (<%= article.view_count %>)</li>
+  <% end %>
+</ol>
