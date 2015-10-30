@@ -14180,3 +14180,596 @@ Migrating to CreatePages (20151030165828)
             FROM sqlite_temp_master
             WHERE name='index_taggings_on_tag_id' AND type='index'
 
+
+
+Started GET "/pages" for ::1 at 2015-10-30 17:59:45 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#index as HTML
+  [1m[35mPage Load (0.2ms)[0m  SELECT "pages".* FROM "pages"
+  Rendered pages/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 312ms (Views: 308.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-30 17:59:46 +0100
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-30 17:59:46 +0100
+
+
+Started GET "/assets/scaffolds.self-729eb1d59be47756498b5ad026c31b29bd32285aec658a41bb9455c693b1e136.css?body=1" for ::1 at 2015-10-30 17:59:46 +0100
+
+
+Started GET "/pages/new" for ::1 at 2015-10-30 18:00:09 +0100
+Processing by PagesController#new as HTML
+  Rendered pages/_form.html.erb (5.0ms)
+  Rendered pages/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 81ms (Views: 77.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/pages" for ::1 at 2015-10-30 18:01:35 +0100
+Processing by PagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2PPt0ic1PJAK7Hz2XYTn8qz392qbn8KkhkndfZnSYUUhmNrvyqa+tZekTKXsJkE8rae1YwtUUc6LyhX1Fx1AeQ==", "page"=>{"title"=>"About", "body"=>"My name is Mat. I'm rising rubyist and Manchester United supporter."}, "commit"=>"Create Page"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "pages" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "About"], ["body", "My name is Mat. I'm rising rubyist and Manchester United supporter."], ["created_at", "2015-10-30 17:01:35.611774"], ["updated_at", "2015-10-30 17:01:35.611774"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/pages/1
+Completed 302 Found in 8ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/pages/1" for ::1 at 2015-10-30 18:01:35 +0100
+Processing by PagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPage Load (0.2ms)[0m  SELECT  "pages".* FROM "pages" WHERE "pages"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered pages/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 101ms (Views: 98.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pages" for ::1 at 2015-10-30 18:01:40 +0100
+Processing by PagesController#index as HTML
+  [1m[36mPage Load (0.2ms)[0m  [1mSELECT "pages".* FROM "pages"[0m
+  Rendered pages/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 75ms (Views: 73.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pages/1" for ::1 at 2015-10-30 18:01:43 +0100
+Processing by PagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPage Load (0.2ms)[0m  SELECT  "pages".* FROM "pages" WHERE "pages"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered pages/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 65ms (Views: 62.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pages/1" for ::1 at 2015-10-30 18:04:02 +0100
+Processing by PagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPage Load (0.6ms)[0m  [1mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered pages/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 113ms (Views: 110.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/articles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-30 18:04:03 +0100
+
+
+Started GET "/assets/scaffolds.self-729eb1d59be47756498b5ad026c31b29bd32285aec658a41bb9455c693b1e136.css?body=1" for ::1 at 2015-10-30 18:04:03 +0100
+
+
+Started GET "/assets/screen.self-16f83778566f2ea814368100ac8e534d7de4921c8d7334c3f01cc357b90c6547.css?body=1" for ::1 at 2015-10-30 18:04:03 +0100
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-30 18:04:03 +0100
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-30 18:04:03 +0100
+
+
+Started GET "/assets/author_sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-30 18:04:03 +0100
+
+
+Started GET "/assets/styles.self-baf6e420a8508ea3e93f24138f35ac65ea34083f3e807488ce69ca2422fe303c.css?body=1" for ::1 at 2015-10-30 18:04:03 +0100
+
+
+Started GET "/assets/tags.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-30 18:04:03 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-10-30 18:04:03 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 18:04:03 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 18:04:03 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 18:04:03 +0100
+
+
+Started GET "/assets/articles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-30 18:04:03 +0100
+
+
+Started GET "/assets/author_sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-30 18:04:03 +0100
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-30 18:04:03 +0100
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-30 18:04:03 +0100
+
+
+Started GET "/assets/tags.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-30 18:04:03 +0100
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-10-30 18:04:03 +0100
+
+
+Started GET "/pages/1" for ::1 at 2015-10-30 18:04:50 +0100
+Processing by PagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPage Load (0.4ms)[0m  SELECT  "pages".* FROM "pages" WHERE "pages"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered pages/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 76ms (Views: 74.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/articles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-30 18:04:51 +0100
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-30 18:04:51 +0100
+
+
+Started GET "/assets/screen.self-16f83778566f2ea814368100ac8e534d7de4921c8d7334c3f01cc357b90c6547.css?body=1" for ::1 at 2015-10-30 18:04:51 +0100
+
+
+Started GET "/assets/scaffolds.self-729eb1d59be47756498b5ad026c31b29bd32285aec658a41bb9455c693b1e136.css?body=1" for ::1 at 2015-10-30 18:04:51 +0100
+
+
+Started GET "/assets/author_sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-30 18:04:51 +0100
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-30 18:04:51 +0100
+
+
+Started GET "/assets/styles.self-baf6e420a8508ea3e93f24138f35ac65ea34083f3e807488ce69ca2422fe303c.css?body=1" for ::1 at 2015-10-30 18:04:51 +0100
+
+
+Started GET "/assets/tags.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-30 18:04:51 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-10-30 18:04:51 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 18:04:51 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 18:04:51 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 18:04:51 +0100
+
+
+Started GET "/assets/articles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-30 18:04:51 +0100
+
+
+Started GET "/assets/author_sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-30 18:04:51 +0100
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-30 18:04:51 +0100
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-30 18:04:51 +0100
+
+
+Started GET "/assets/tags.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-30 18:04:51 +0100
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-10-30 18:04:51 +0100
+
+
+Started GET "/" for ::1 at 2015-10-30 18:04:57 +0100
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 96ms (Views: 85.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2015-10-30 18:07:02 +0100
+Processing by ArticlesController#index as HTML
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `search_by_tag_name' for #<Class:0x007f8c76f88bd0>):
+  app/controllers/articles_controller.rb:6:in `index'
+
+
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (74.7ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (57.7ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (129.1ms)
+
+
+Started GET "/" for ::1 at 2015-10-30 18:07:51 +0100
+Processing by ArticlesController#index as HTML
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `search_by_tag_name' for #<Class:0x007f8c75edc930>):
+  app/controllers/articles_controller.rb:7:in `index'
+
+
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.6ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (74.8ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (51.8ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (112.4ms)
+
+
+Started GET "/" for ::1 at 2015-10-30 18:08:31 +0100
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.5ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 109ms (Views: 98.8ms | ActiveRecord: 0.8ms)
+  [1m[36mPage Load (4.5ms)[0m  [1mSELECT "pages".* FROM "pages"[0m
+
+
+Started GET "/" for ::1 at 2015-10-30 18:13:17 +0100
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.5ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (2.2ms)
+  [1m[35mPage Load (0.3ms)[0m  SELECT  "pages".* FROM "pages" WHERE "pages"."title" = ? LIMIT 1  [["title", "About"]]
+Completed 200 OK in 123ms (Views: 120.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/pages/1" for ::1 at 2015-10-30 18:13:19 +0100
+Processing by PagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPage Load (0.2ms)[0m  [1mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered pages/show.html.erb within layouts/application (0.6ms)
+  [1m[35mPage Load (0.2ms)[0m  SELECT  "pages".* FROM "pages" WHERE "pages"."title" = ? LIMIT 1  [["title", "About"]]
+Completed 200 OK in 72ms (Views: 70.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-10-30 18:13:22 +0100
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (1.6ms)
+  [1m[35mPage Load (0.1ms)[0m  SELECT  "pages".* FROM "pages" WHERE "pages"."title" = ? LIMIT 1  [["title", "About"]]
+Completed 200 OK in 70ms (Views: 68.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pages/1" for ::1 at 2015-10-30 18:14:09 +0100
+Processing by PagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPage Load (0.1ms)[0m  [1mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered pages/show.html.erb within layouts/application (0.1ms)
+  [1m[35mPage Load (0.1ms)[0m  SELECT  "pages".* FROM "pages" WHERE "pages"."title" = ? LIMIT 1  [["title", "About"]]
+Completed 200 OK in 66ms (Views: 64.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-10-30 18:14:11 +0100
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (1.7ms)
+  [1m[35mPage Load (0.1ms)[0m  SELECT  "pages".* FROM "pages" WHERE "pages"."title" = ? LIMIT 1  [["title", "About"]]
+Completed 200 OK in 118ms (Views: 116.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pages/1" for ::1 at 2015-10-30 18:14:16 +0100
+Processing by PagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPage Load (0.2ms)[0m  [1mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered pages/show.html.erb within layouts/application (0.1ms)
+  [1m[35mPage Load (0.2ms)[0m  SELECT  "pages".* FROM "pages" WHERE "pages"."title" = ? LIMIT 1  [["title", "About"]]
+Completed 200 OK in 71ms (Views: 68.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pages/1" for ::1 at 2015-10-30 18:16:06 +0100
+Processing by PagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPage Load (0.1ms)[0m  [1mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered pages/show.html.erb within layouts/application (0.1ms)
+  [1m[35mPage Load (0.1ms)[0m  SELECT "pages".* FROM "pages"
+Completed 200 OK in 66ms (Views: 64.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/articles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-30 18:16:06 +0100
+
+
+Started GET "/assets/author_sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-30 18:16:06 +0100
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-30 18:16:06 +0100
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-30 18:16:07 +0100
+
+
+Started GET "/assets/scaffolds.self-729eb1d59be47756498b5ad026c31b29bd32285aec658a41bb9455c693b1e136.css?body=1" for ::1 at 2015-10-30 18:16:07 +0100
+
+
+Started GET "/assets/styles.self-baf6e420a8508ea3e93f24138f35ac65ea34083f3e807488ce69ca2422fe303c.css?body=1" for ::1 at 2015-10-30 18:16:07 +0100
+
+
+Started GET "/assets/screen.self-16f83778566f2ea814368100ac8e534d7de4921c8d7334c3f01cc357b90c6547.css?body=1" for ::1 at 2015-10-30 18:16:07 +0100
+
+
+Started GET "/assets/tags.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-30 18:16:07 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-10-30 18:16:07 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 18:16:07 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 18:16:07 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 18:16:07 +0100
+
+
+Started GET "/assets/articles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-30 18:16:07 +0100
+
+
+Started GET "/assets/author_sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-30 18:16:07 +0100
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-30 18:16:07 +0100
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-30 18:16:07 +0100
+
+
+Started GET "/assets/tags.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-30 18:16:07 +0100
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-10-30 18:16:07 +0100
+
+
+Started GET "/pages/1" for ::1 at 2015-10-30 18:16:08 +0100
+Processing by PagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPage Load (0.1ms)[0m  [1mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered pages/show.html.erb within layouts/application (0.2ms)
+  [1m[35mPage Load (0.1ms)[0m  SELECT "pages".* FROM "pages"
+Completed 200 OK in 93ms (Views: 91.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/articles/archive" for ::1 at 2015-10-30 18:16:09 +0100
+Processing by ArticlesController#archive as HTML
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/archive.html.erb within layouts/application (1.4ms)
+  [1m[35mPage Load (0.2ms)[0m  SELECT "pages".* FROM "pages"
+Completed 200 OK in 100ms (Views: 97.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pages/1" for ::1 at 2015-10-30 18:16:10 +0100
+Processing by PagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPage Load (0.1ms)[0m  [1mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered pages/show.html.erb within layouts/application (0.1ms)
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages"
+Completed 200 OK in 82ms (Views: 80.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/login" for ::1 at 2015-10-30 18:16:11 +0100
+Processing by AuthorSessionsController#new as HTML
+  Rendered author_sessions/new.html.erb within layouts/application (2.6ms)
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages"[0m
+Completed 200 OK in 104ms (Views: 102.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/author_sessions" for ::1 at 2015-10-30 18:16:16 +0100
+Processing by AuthorSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3uUkXoa4NkIAHRbfShAwytqPXcJ6/BjvjWFsn/U4LVUnjhNjayu0Z51VJoz7spYE298fy+o3i4WA4qQXe/cMaQ==", "email"=>"admin@example.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mAuthor Load (0.6ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."email" = 'admin@example.com'  ORDER BY "authors"."id" ASC LIMIT 1
+  Rendered author_sessions/new.html.erb within layouts/application (2.0ms)
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages"[0m
+Completed 200 OK in 94ms (Views: 78.7ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/author_sessions" for ::1 at 2015-10-30 18:16:24 +0100
+Processing by AuthorSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aAp/XZki+4ruDYcDSD25t+eE5sOiY/k2WloYEo0xW82RYUhgdLF5r3NFt1D5nx955tSkyjKoalxX2dCaA/568Q==", "email"=>"admin@example.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."email" = 'admin@example.com'  ORDER BY "authors"."id" ASC LIMIT 1
+  Rendered author_sessions/new.html.erb within layouts/application (0.5ms)
+  [1m[36mPage Load (0.1ms)[0m  [1mSELECT "pages".* FROM "pages"[0m
+Completed 200 OK in 66ms (Views: 64.0ms | ActiveRecord: 0.4ms)
+  [1m[35mAuthor Load (8.3ms)[0m  SELECT "authors".* FROM "authors"
+
+
+Started GET "/" for ::1 at 2015-10-30 18:17:53 +0100
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (1.5ms)
+  [1m[36mPage Load (0.2ms)[0m  [1mSELECT "pages".* FROM "pages"[0m
+Completed 200 OK in 71ms (Views: 69.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/authors" for ::1 at 2015-10-30 18:17:56 +0100
+Processing by AuthorsController#index as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-10-30 18:17:56 +0100
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (1.4ms)
+  [1m[36mPage Load (0.2ms)[0m  [1mSELECT "pages".* FROM "pages"[0m
+Completed 200 OK in 67ms (Views: 65.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/authors/new" for ::1 at 2015-10-30 18:18:03 +0100
+Processing by AuthorsController#new as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "authors"
+  Rendered authors/_form.html.erb (32.3ms)
+  Rendered authors/new.html.erb within layouts/application (34.6ms)
+  [1m[36mPage Load (0.1ms)[0m  [1mSELECT "pages".* FROM "pages"[0m
+Completed 200 OK in 112ms (Views: 103.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/authors" for ::1 at 2015-10-30 18:18:20 +0100
+Processing by AuthorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Pe14ZtxAWmrzpux0gFcYZmP6NeKx2kX+B0K0No+gAPTEhk9bMdPYT27u3Ccx9b6oYqp36yER1pQKwXy+AW8hyA==", "author"=>{"username"=>"admin", "email"=>"admin@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Author"}
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "authors"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (8.5ms)[0m  INSERT INTO "authors" ("username", "email", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["username", "admin"], ["email", "admin@example.com"], ["salt", "E4qyYpwnedEpVF6syB8C"], ["crypted_password", "$2a$10$81TbKVjseZOl6M5.dhsAHuA1rLJWbADLLw05n5sMmZSJvXMc96aEC"], ["created_at", "2015-10-30 17:18:20.965725"], ["updated_at", "2015-10-30 17:18:20.965725"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/authors/1
+Completed 302 Found in 205ms (ActiveRecord: 9.9ms)
+
+
+Started GET "/authors/1" for ::1 at 2015-10-30 18:18:20 +0100
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-10-30 18:18:21 +0100
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (1.3ms)
+  [1m[35mPage Load (0.2ms)[0m  SELECT "pages".* FROM "pages"
+Completed 200 OK in 65ms (Views: 64.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/login" for ::1 at 2015-10-30 18:18:22 +0100
+Processing by AuthorSessionsController#new as HTML
+  Rendered author_sessions/new.html.erb within layouts/application (1.0ms)
+  [1m[36mPage Load (0.2ms)[0m  [1mSELECT "pages".* FROM "pages"[0m
+Completed 200 OK in 80ms (Views: 79.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/author_sessions" for ::1 at 2015-10-30 18:18:29 +0100
+Processing by AuthorSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q7CrazT/7rIVrY3Pdbk6jBbcOAehtMHXgU+vOzoo0tC625xW2Wxsl4jlvZzEG5xCF4x6DjF/Ur2MzGeztOfz7A==", "email"=>"admin@example.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."email" = 'admin@example.com'  ORDER BY "authors"."id" ASC LIMIT 1
+Redirected to http://localhost:3000/authors/1
+Completed 302 Found in 185ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/authors/1" for ::1 at 2015-10-30 18:18:29 +0100
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered authors/show.html.erb within layouts/application (1.5ms)
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages"[0m
+Completed 200 OK in 81ms (Views: 78.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-10-30 18:18:31 +0100
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered articles/index.html.erb within layouts/application (2.0ms)
+  [1m[35mPage Load (0.1ms)[0m  SELECT "pages".* FROM "pages"
+Completed 200 OK in 64ms (Views: 62.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/authors" for ::1 at 2015-10-30 18:18:36 +0100
+Processing by AuthorsController#index as HTML
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAuthor Load (0.4ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (3.0ms)
+  [1m[36mPage Load (0.2ms)[0m  [1mSELECT "pages".* FROM "pages"[0m
+Completed 200 OK in 90ms (Views: 88.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/pages/1" for ::1 at 2015-10-30 18:18:39 +0100
+Processing by PagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPage Load (0.1ms)[0m  SELECT  "pages".* FROM "pages" WHERE "pages"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered pages/show.html.erb within layouts/application (0.2ms)
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mPage Load (0.2ms)[0m  SELECT "pages".* FROM "pages"
+Completed 200 OK in 73ms (Views: 71.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-10-30 18:18:42 +0100
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered articles/index.html.erb within layouts/application (2.0ms)
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages"[0m
+Completed 200 OK in 72ms (Views: 70.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pages/1" for ::1 at 2015-10-30 18:18:44 +0100
+Processing by PagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPage Load (0.1ms)[0m  SELECT  "pages".* FROM "pages" WHERE "pages"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered pages/show.html.erb within layouts/application (0.1ms)
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mPage Load (0.1ms)[0m  SELECT "pages".* FROM "pages"
+Completed 200 OK in 73ms (Views: 71.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/logout" for ::1 at 2015-10-30 18:18:49 +0100
+Processing by AuthorSessionsController#destroy as HTML
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:3000/authors
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/authors" for ::1 at 2015-10-30 18:18:49 +0100
+Processing by AuthorsController#index as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-10-30 18:18:49 +0100
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (1.3ms)
+  [1m[36mPage Load (0.2ms)[0m  [1mSELECT "pages".* FROM "pages"[0m
+Completed 200 OK in 75ms (Views: 74.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/articles/2" for ::1 at 2015-10-30 18:18:51 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mArticle Load (0.3ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "articles" SET "view_count" = ?, "updated_at" = ? WHERE "articles"."id" = ?  [["view_count", 10], ["updated_at", "2015-10-30 17:18:51.089372"], ["id", 2]]
+  [1m[36m (8.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?  [["article_id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 2]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?  [["article_id", 2]]
+  Rendered articles/_comment.html.erb (1.4ms)
+  Rendered comments/_form.html.erb (2.9ms)
+  Rendered articles/show.html.erb within layouts/application (39.5ms)
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages"[0m
+Completed 200 OK in 142ms (Views: 113.4ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/authors/new" for ::1 at 2015-10-30 18:18:57 +0100
+Processing by AuthorsController#new as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "authors"
+Redirected to http://localhost:3000/
+Filter chain halted as :zero_authors_or_authenticated rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-10-30 18:18:57 +0100
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (1.7ms)
+  [1m[35mPage Load (0.1ms)[0m  SELECT "pages".* FROM "pages"
+Completed 200 OK in 79ms (Views: 77.4ms | ActiveRecord: 0.3ms)

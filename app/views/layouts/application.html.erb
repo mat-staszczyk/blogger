@@ -17,11 +17,14 @@
         <li><%= link_to "Authors", authors_path %></li>
         <li><%= link_to "New Author", new_author_path %></li>
       <% end %>
-      <li></li>
+      <% Page.all.each do |page| %>
+        <li><%= link_to page.title, page %></li>
+      <% end %>
     </ul>
   </div>
   <p class="flash"><%= flash.notice %></p>
   <%= yield %>
+  <br /><br /><br />
   <hr>
     <h6>
       <% if logged_in? %>

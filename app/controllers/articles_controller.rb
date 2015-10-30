@@ -3,7 +3,8 @@ class ArticlesController < ApplicationController
   include ArticlesHelper
 
   def index
-    @articles = Article.all
+    @articles = Article.all 
+    @pages = Page.all
 
     respond_to do |format|
       format.html
