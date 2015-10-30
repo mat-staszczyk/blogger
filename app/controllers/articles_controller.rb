@@ -1,15 +1,12 @@
 class ArticlesController < ApplicationController
-  before_filter :require_login, except: [:index, :show, :popular]
+  before_filter :require_login, except: [:index, :show, :popular, :archive]
   include ArticlesHelper
-
-  def popular
-    @articles = Article.all.sort { |x,y| y.view_count <=> x.view_count }.slice(0,3)
-  end
 
   def index
     @articles = Article.all
 
     respond_to do |format|
+      format.html
       format.xml { render xml: @articles }
       format.json { render json: @articles }
     end
@@ -52,6 +49,25 @@ class ArticlesController < ApplicationController
     flash.notice = "Article '#{@article.title}' updated!"
 
     redirect_to article_path(@article)
+  end
+
+  def popular
+    @articles = Article.all.sort { |x,y| y.view_count <=> x.view_count }.slice(0,3)
+  end
+
+  def archive
+    @articles = Article.all
+    @years = @articles.collect(&:year).uniq.sort { |x,y| y <=> x }  
+    @timeline = {}
+    @years.each do |year|
+      @timeline[year] ||= []
+      @articles.each do |article|
+        if (article.year == year)
+          @timeline[year] << article.month
+        end 
+      end
+      @timeline[year].uniq!
+    end
   end
 
 end

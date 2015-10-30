@@ -1,0 +1,22 @@
+<h1>Archive</h1>
+
+
+<% @timeline.each do |year, month| %>
+  <ul>
+    <li><h2><%= year %></h2></li>
+    <ul>
+      <% @timeline[year].each do |month| %>
+        <li><h5>  <%= month %></h5></li>
+        <ul>
+          <% @articles.each do |article| %>
+            <% if (article.year == year && article.month == month) %>
+              <li><p>  <%= link_to article.title, article_path(article) %>
+                <span>(<%= article.created_at.strftime("%B %d, %Y") %>)</span> </p>
+              </li>
+            <% end %>
+          <% end %>
+        </ul>  
+      <% end %>
+    </ul>
+  </ul>
+<% end %>
