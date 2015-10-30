@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :pages
   root 'articles#index'
   get 'articles/popular' => 'articles#popular'
   get 'articles/archive' => 'articles#archive'
