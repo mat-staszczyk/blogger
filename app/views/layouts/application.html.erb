@@ -18,7 +18,7 @@
         <li><%= link_to "New Author", new_author_path %></li>
       <% end %>
       <% Page.all.each do |page| %>
-        <li><%= link_to page.title, page %></li>
+        <li><%= link_to page.title, pages_path(page) %></li>
       <% end %>
     </ul>
   </div>

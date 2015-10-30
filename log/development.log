@@ -14773,3 +14773,683 @@ Processing by ArticlesController#index as HTML
   Rendered articles/index.html.erb within layouts/application (1.7ms)
   [1m[35mPage Load (0.1ms)[0m  SELECT "pages".* FROM "pages"
 Completed 200 OK in 79ms (Views: 77.4ms | ActiveRecord: 0.3ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddSlugToPages (20151030172102)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "pages" ADD "slug" varchar[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151030172102"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_authors_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_authors_on_email' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_article_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_article_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_taggings_on_article_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_taggings_on_article_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_taggings_on_tag_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_taggings_on_tag_id' AND type='index'
+
+
+
+Started GET "/" for ::1 at 2015-10-30 18:25:14 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (7.0ms)
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages"[0m
+Completed 200 OK in 130ms (Views: 120.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/pages/1" for ::1 at 2015-10-30 18:25:16 +0100
+Processing by PagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPage Load (0.2ms)[0m  SELECT  "pages".* FROM "pages" WHERE "pages"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered pages/show.html.erb within layouts/application (0.1ms)
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages"[0m
+Completed 200 OK in 72ms (Views: 70.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pages/1" for ::1 at 2015-10-30 18:25:20 +0100
+Processing by PagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPage Load (0.1ms)[0m  SELECT  "pages".* FROM "pages" WHERE "pages"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered pages/show.html.erb within layouts/application (0.0ms)
+  [1m[36mPage Load (0.2ms)[0m  [1mSELECT "pages".* FROM "pages"[0m
+Completed 200 OK in 65ms (Views: 63.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pages/1" for ::1 at 2015-10-30 18:25:42 +0100
+Processing by PagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPage Load (0.1ms)[0m  SELECT  "pages".* FROM "pages" WHERE "pages"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered pages/show.html.erb within layouts/application (0.1ms)
+  [1m[36mPage Load (0.2ms)[0m  [1mSELECT "pages".* FROM "pages"[0m
+Completed 200 OK in 75ms (Views: 73.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pages/" for ::1 at 2015-10-30 18:25:46 +0100
+Processing by PagesController#index as HTML
+  [1m[35mPage Load (0.2ms)[0m  SELECT "pages".* FROM "pages"
+  Rendered pages/index.html.erb within layouts/application (1.6ms)
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT "pages".* FROM "pages"[0m
+Completed 200 OK in 77ms (Views: 75.2ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/pages/1" for ::1 at 2015-10-30 18:25:49 +0100
+Processing by PagesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"NBv4sjzEQwonWwY6e77dwPij4k+W9iBg6nNJLyQ5C4Zy6kOcd4mteJPbLpyE8qNZW6r564it9QPRPCCUWbIPxg==", "id"=>"1"}
+  [1m[35mPage Load (0.2ms)[0m  SELECT  "pages".* FROM "pages" WHERE "pages"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "pages" WHERE "pages"."id" = ?  [["id", 1]]
+  [1m[36m (9.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/pages
+Completed 302 Found in 14ms (ActiveRecord: 9.7ms)
+
+
+Started GET "/pages" for ::1 at 2015-10-30 18:25:49 +0100
+Processing by PagesController#index as HTML
+  [1m[35mPage Load (0.1ms)[0m  SELECT "pages".* FROM "pages"
+  Rendered pages/index.html.erb within layouts/application (0.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages"[0m
+Completed 200 OK in 66ms (Views: 64.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/pages/new" for ::1 at 2015-10-30 18:25:51 +0100
+Processing by PagesController#new as HTML
+  Rendered pages/_form.html.erb (2.9ms)
+  Rendered pages/new.html.erb within layouts/application (4.7ms)
+  [1m[35mPage Load (0.1ms)[0m  SELECT "pages".* FROM "pages"
+Completed 200 OK in 82ms (Views: 80.7ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/pages" for ::1 at 2015-10-30 18:26:27 +0100
+Processing by PagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ktMjoIJTpkY+9meFq08ensw9RdAzlr9xtns7M2Oc6gXUIpiOyR5INIp2TyNUA2AHbzRedC3NahKNNFKIHhfuRQ==", "page"=>{"title"=>"About", "body"=>"My name is Matt. I'm rising rubyist and Manchester United supporter.", "slug"=>"about"}, "commit"=>"Create Page"}
+Unpermitted parameter: slug
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "pages" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-10-30 17:26:27.770078"], ["updated_at", "2015-10-30 17:26:27.770078"]]
+  [1m[36m (9.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/pages/2
+Completed 302 Found in 14ms (ActiveRecord: 9.7ms)
+
+
+Started GET "/pages/2" for ::1 at 2015-10-30 18:26:27 +0100
+Processing by PagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPage Load (0.1ms)[0m  SELECT  "pages".* FROM "pages" WHERE "pages"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered pages/show.html.erb within layouts/application (0.1ms)
+  [1m[36mPage Load (0.1ms)[0m  [1mSELECT "pages".* FROM "pages"[0m
+Completed 200 OK in 73ms (Views: 71.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-10-30 18:26:31 +0100
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (1.3ms)
+  [1m[36mPage Load (0.2ms)[0m  [1mSELECT "pages".* FROM "pages"[0m
+Completed 200 OK in 65ms (Views: 63.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-10-30 18:26:31 +0100
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.1ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (1.2ms)
+  [1m[36mPage Load (0.1ms)[0m  [1mSELECT "pages".* FROM "pages"[0m
+Completed 200 OK in 98ms (Views: 96.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-10-30 18:26:32 +0100
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (1.4ms)
+  [1m[36mPage Load (0.2ms)[0m  [1mSELECT "pages".* FROM "pages"[0m
+Completed 200 OK in 84ms (Views: 82.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/author_sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-30 18:26:32 +0100
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-30 18:26:32 +0100
+
+
+Started GET "/assets/screen.self-16f83778566f2ea814368100ac8e534d7de4921c8d7334c3f01cc357b90c6547.css?body=1" for ::1 at 2015-10-30 18:26:32 +0100
+
+
+Started GET "/assets/scaffolds.self-729eb1d59be47756498b5ad026c31b29bd32285aec658a41bb9455c693b1e136.css?body=1" for ::1 at 2015-10-30 18:26:32 +0100
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-30 18:26:32 +0100
+
+
+Started GET "/assets/articles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-30 18:26:32 +0100
+
+
+Started GET "/assets/styles.self-baf6e420a8508ea3e93f24138f35ac65ea34083f3e807488ce69ca2422fe303c.css?body=1" for ::1 at 2015-10-30 18:26:32 +0100
+
+
+Started GET "/assets/tags.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-30 18:26:32 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-10-30 18:26:32 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 18:26:32 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 18:26:32 +0100
+
+
+Started GET "/assets/articles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-30 18:26:32 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 18:26:32 +0100
+
+
+Started GET "/assets/author_sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-30 18:26:32 +0100
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-30 18:26:32 +0100
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-30 18:26:32 +0100
+
+
+Started GET "/assets/tags.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-30 18:26:32 +0100
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-10-30 18:26:32 +0100
+
+
+Started GET "/pages" for ::1 at 2015-10-30 18:40:18 +0100
+Processing by PagesController#index as HTML
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages"
+  Rendered pages/index.html.erb within layouts/application (6.8ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.7ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"pages", :id=>nil} missing required keys: [:id]):
+    16:       <tr>
+    17:         <td><%= page.title %></td>
+    18:         <td><%= page.body %></td>
+    19:         <td><%= link_to 'Show', page %></td>
+    20:         <td><%= link_to 'Edit', edit_page_path(page) %></td>
+    21:         <td><%= link_to 'Destroy', page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    22:       </tr>
+  app/views/pages/index.html.erb:19:in `block in _app_views_pages_index_html_erb__3073184704955031030_70120593306380'
+  app/views/pages/index.html.erb:15:in `_app_views_pages_index_html_erb__3073184704955031030_70120593306380'
+
+
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.5ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.2ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (79.3ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (52.2ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (122.1ms)
+
+
+Started GET "/pages" for ::1 at 2015-10-30 18:43:04 +0100
+Processing by PagesController#index as HTML
+  [1m[36mPage Load (0.1ms)[0m  [1mSELECT "pages".* FROM "pages"[0m
+  Rendered pages/index.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"pages", :id=>nil} missing required keys: [:id]):
+    16:       <tr>
+    17:         <td><%= page.title %></td>
+    18:         <td><%= page.body %></td>
+    19:         <td><%= link_to 'Show', page_path(page) %></td>
+    20:         <td><%= link_to 'Edit', edit_page_path(page) %></td>
+    21:         <td><%= link_to 'Destroy', page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    22:       </tr>
+  app/views/pages/index.html.erb:19:in `block in _app_views_pages_index_html_erb__3073184704955031030_70120598437040'
+  app/views/pages/index.html.erb:15:in `_app_views_pages_index_html_erb__3073184704955031030_70120598437040'
+
+
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.5ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (59.2ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (49.8ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (114.1ms)
+
+
+Started GET "/pages" for ::1 at 2015-10-30 18:43:14 +0100
+Processing by PagesController#index as HTML
+  [1m[35mPage Load (0.1ms)[0m  SELECT "pages".* FROM "pages"
+  Rendered pages/index.html.erb within layouts/application (4.1ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"pages", :id=>nil} missing required keys: [:id]):
+    16:       <tr>
+    17:         <td><%= page.title %></td>
+    18:         <td><%= page.body %></td>
+    19:         <td><%= link_to 'Show', page_path(@page) %></td>
+    20:         <td><%= link_to 'Edit', edit_page_path(page) %></td>
+    21:         <td><%= link_to 'Destroy', page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    22:       </tr>
+  app/views/pages/index.html.erb:19:in `block in _app_views_pages_index_html_erb__3073184704955031030_70120606731840'
+  app/views/pages/index.html.erb:15:in `_app_views_pages_index_html_erb__3073184704955031030_70120606731840'
+
+
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.2ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (58.1ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (42.5ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (105.0ms)
+
+
+Started GET "/pages" for ::1 at 2015-10-30 18:46:44 +0100
+
+SyntaxError (/Users/mat/Desktop/warfield/06_blogger/app/controllers/pages_controller.rb:17: syntax error, unexpected ':', expecting '}'
+      format.json { render: json: @page }
+                           ^):
+  app/controllers/pages_controller.rb:17: syntax error, unexpected ':', expecting '}'
+
+
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.7ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (70.7ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (45.5ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (107.5ms)
+
+
+Started GET "/pages" for ::1 at 2015-10-30 18:46:58 +0100
+Processing by PagesController#index as HTML
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages"[0m
+  Rendered pages/index.html.erb within layouts/application (8.4ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.8ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"pages", :id=>nil} missing required keys: [:id]):
+    16:       <tr>
+    17:         <td><%= page.title %></td>
+    18:         <td><%= page.body %></td>
+    19:         <td><%= link_to 'Show', page %></td>
+    20:         <td><%= link_to 'Edit', edit_page_path(page) %></td>
+    21:         <td><%= link_to 'Destroy', page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    22:       </tr>
+  app/views/pages/index.html.erb:19:in `block in _app_views_pages_index_html_erb__3073184704955031030_70120631533760'
+  app/views/pages/index.html.erb:15:in `_app_views_pages_index_html_erb__3073184704955031030_70120631533760'
+
+
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.6ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (70.6ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (50.7ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (107.3ms)
+
+
+Started GET "/pages" for ::1 at 2015-10-30 18:48:00 +0100
+Processing by PagesController#index as HTML
+  [1m[35mPage Load (0.2ms)[0m  SELECT "pages".* FROM "pages"
+  Rendered pages/index.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"pages", :id=>nil} missing required keys: [:id]):
+    17:         <td><%= page.title %></td>
+    18:         <td><%= page.body %></td>
+    19:         <td><%= link_to 'Show', @page %></td>
+    20:         <td><%= link_to 'Edit', edit_page_path(page) %></td>
+    21:         <td><%= link_to 'Destroy', page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    22:       </tr>
+    23:     <% end %>
+  app/views/pages/index.html.erb:20:in `block in _app_views_pages_index_html_erb__3073184704955031030_70120633049560'
+  app/views/pages/index.html.erb:15:in `_app_views_pages_index_html_erb__3073184704955031030_70120633049560'
+
+
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.3ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.3ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (66.2ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (48.3ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (115.8ms)
+
+
+Started GET "/pages" for ::1 at 2015-10-30 18:48:40 +0100
+Processing by PagesController#index as HTML
+  [1m[36mPage Load (0.2ms)[0m  [1mSELECT "pages".* FROM "pages"[0m
+  Rendered pages/index.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"pages", :id=>nil} missing required keys: [:id]):
+    17:         <td><%= page.title %></td>
+    18:         <td><%= page.body %></td>
+    19:         <td><%= link_to 'Show', @page %></td>
+    20:         <td><%= link_to 'Edit', edit_page_path(@page) %></td>
+    21:         <td><%= link_to 'Destroy', @page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    22:       </tr>
+    23:     <% end %>
+  app/views/pages/index.html.erb:20:in `block in _app_views_pages_index_html_erb__3073184704955031030_70120607543560'
+  app/views/pages/index.html.erb:15:in `_app_views_pages_index_html_erb__3073184704955031030_70120607543560'
+
+
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.2ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (65.2ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (43.0ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (100.7ms)
+
+
+Started GET "/pages" for ::1 at 2015-10-30 18:48:42 +0100
+Processing by PagesController#index as HTML
+  [1m[35mPage Load (0.1ms)[0m  SELECT "pages".* FROM "pages"
+  Rendered pages/index.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"pages", :id=>nil} missing required keys: [:id]):
+    17:         <td><%= page.title %></td>
+    18:         <td><%= page.body %></td>
+    19:         <td><%= link_to 'Show', @page %></td>
+    20:         <td><%= link_to 'Edit', edit_page_path(@page) %></td>
+    21:         <td><%= link_to 'Destroy', @page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    22:       </tr>
+    23:     <% end %>
+  app/views/pages/index.html.erb:20:in `block in _app_views_pages_index_html_erb__3073184704955031030_70120607543560'
+  app/views/pages/index.html.erb:15:in `_app_views_pages_index_html_erb__3073184704955031030_70120607543560'
+
+
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.1ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (59.4ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (50.5ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (114.6ms)
+
+
+Started GET "/" for ::1 at 2015-10-30 18:50:07 +0100
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (8.1ms)
+  [1m[35mPage Load (0.2ms)[0m  SELECT "pages".* FROM "pages"
+Completed 500 Internal Server Error in 96ms (ActiveRecord: 0.7ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"pages", :id=>nil} missing required keys: [:id]):
+    18:         <li><%= link_to "New Author", new_author_path %></li>
+    19:       <% end %>
+    20:       <% Page.all.each do |page| %>
+    21:         <li><%= link_to page.title, page %></li>
+    22:       <% end %>
+    23:     </ul>
+    24:   </div>
+  app/views/layouts/application.html.erb:21:in `block in _app_views_layouts_application_html_erb__3319754603059419764_70120598675900'
+  app/views/layouts/application.html.erb:20:in `_app_views_layouts_application_html_erb__3319754603059419764_70120598675900'
+  app/controllers/articles_controller.rb:9:in `index'
+
+
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.4ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.2ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (56.3ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (45.1ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (98.2ms)
+
+
+Started GET "/" for ::1 at 2015-10-30 18:51:43 +0100
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (7.9ms)
+  [1m[35mPage Load (0.2ms)[0m  SELECT "pages".* FROM "pages"
+Completed 500 Internal Server Error in 126ms (ActiveRecord: 1.1ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"pages", :id=>nil} missing required keys: [:id]):
+    18:         <li><%= link_to "New Author", new_author_path %></li>
+    19:       <% end %>
+    20:       <% Page.all.each do |page| %>
+    21:         <li><%= link_to page.title, page %></li>
+    22:       <% end %>
+    23:     </ul>
+    24:   </div>
+  app/views/layouts/application.html.erb:21:in `block in _app_views_layouts_application_html_erb__3319754603059419764_70120598675900'
+  app/views/layouts/application.html.erb:20:in `_app_views_layouts_application_html_erb__3319754603059419764_70120598675900'
+  app/controllers/articles_controller.rb:9:in `index'
+
+
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.8ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (68.6ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (50.8ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (109.5ms)
+
+
+Started GET "/" for ::1 at 2015-10-30 18:52:46 +0100
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (1.3ms)
+  [1m[35mPage Load (0.1ms)[0m  SELECT "pages".* FROM "pages"
+Completed 200 OK in 79ms (Views: 77.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/articles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-30 18:52:46 +0100
+
+
+Started GET "/assets/scaffolds.self-729eb1d59be47756498b5ad026c31b29bd32285aec658a41bb9455c693b1e136.css?body=1" for ::1 at 2015-10-30 18:52:46 +0100
+
+
+Started GET "/assets/styles.self-baf6e420a8508ea3e93f24138f35ac65ea34083f3e807488ce69ca2422fe303c.css?body=1" for ::1 at 2015-10-30 18:52:46 +0100
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-30 18:52:46 +0100
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-30 18:52:46 +0100
+
+
+Started GET "/assets/author_sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-30 18:52:46 +0100
+
+
+Started GET "/assets/screen.self-16f83778566f2ea814368100ac8e534d7de4921c8d7334c3f01cc357b90c6547.css?body=1" for ::1 at 2015-10-30 18:52:46 +0100
+
+
+Started GET "/assets/tags.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-30 18:52:46 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-10-30 18:52:46 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-30 18:52:46 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-30 18:52:46 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-30 18:52:46 +0100
+
+
+Started GET "/assets/articles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-30 18:52:46 +0100
+
+
+Started GET "/assets/author_sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-30 18:52:46 +0100
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-30 18:52:46 +0100
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-30 18:52:46 +0100
+
+
+Started GET "/assets/tags.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-30 18:52:46 +0100
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-10-30 18:52:46 +0100
+
+
+Started GET "/pages" for ::1 at 2015-10-30 18:52:47 +0100
+Processing by PagesController#index as HTML
+  [1m[36mPage Load (0.1ms)[0m  [1mSELECT "pages".* FROM "pages"[0m
+  Rendered pages/index.html.erb within layouts/application (4.1ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"pages", :id=>nil} missing required keys: [:id]):
+    16:       <tr>
+    17:         <td><%= page.title %></td>
+    18:         <td><%= page.body %></td>
+    19:         <td><%= link_to 'Show', page %></td>
+    20:         <td><%= link_to 'Edit', edit_page_path(page) %></td>
+    21:         <td><%= link_to 'Destroy', page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    22:       </tr>
+  app/views/pages/index.html.erb:19:in `block in _app_views_pages_index_html_erb__3073184704955031030_70120645409100'
+  app/views/pages/index.html.erb:15:in `_app_views_pages_index_html_erb__3073184704955031030_70120645409100'
+
+
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.6ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (59.4ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (43.5ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (102.2ms)
+
+
+Started GET "/pages" for ::1 at 2015-10-30 18:52:48 +0100
+Processing by PagesController#index as HTML
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages"
+  Rendered pages/index.html.erb within layouts/application (7.0ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"pages", :id=>nil} missing required keys: [:id]):
+    16:       <tr>
+    17:         <td><%= page.title %></td>
+    18:         <td><%= page.body %></td>
+    19:         <td><%= link_to 'Show', page %></td>
+    20:         <td><%= link_to 'Edit', edit_page_path(page) %></td>
+    21:         <td><%= link_to 'Destroy', page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    22:       </tr>
+  app/views/pages/index.html.erb:19:in `block in _app_views_pages_index_html_erb__3073184704955031030_70120607220800'
+  app/views/pages/index.html.erb:15:in `_app_views_pages_index_html_erb__3073184704955031030_70120607220800'
+
+
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.8ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.9ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (66.9ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (49.6ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (104.3ms)
+
+
+Started GET "/pages" for ::1 at 2015-10-30 18:52:48 +0100
+Processing by PagesController#index as HTML
+  [1m[36mPage Load (0.2ms)[0m  [1mSELECT "pages".* FROM "pages"[0m
+  Rendered pages/index.html.erb within layouts/application (6.2ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"pages", :id=>nil} missing required keys: [:id]):
+    16:       <tr>
+    17:         <td><%= page.title %></td>
+    18:         <td><%= page.body %></td>
+    19:         <td><%= link_to 'Show', page %></td>
+    20:         <td><%= link_to 'Edit', edit_page_path(page) %></td>
+    21:         <td><%= link_to 'Destroy', page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    22:       </tr>
+  app/views/pages/index.html.erb:19:in `block in _app_views_pages_index_html_erb__3073184704955031030_70120645409100'
+  app/views/pages/index.html.erb:15:in `_app_views_pages_index_html_erb__3073184704955031030_70120645409100'
+
+
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.5ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (56.6ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (44.5ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/mat/.rvm/gems/ruby-2.2-head/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (110.9ms)
