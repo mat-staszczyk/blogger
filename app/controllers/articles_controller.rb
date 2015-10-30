@@ -1,9 +1,18 @@
 class ArticlesController < ApplicationController
-  before_filter :require_login, except: [:index, :show]
+  before_filter :require_login, except: [:index, :show, :popular]
   include ArticlesHelper
+
+  def popular
+    @articles = Article.all.sort { |x,y| y.view_count <=> x.view_count }.slice(0,3)
+  end
 
   def index
     @articles = Article.all
+
+    respond_to do |format|
+      format.xml { render xml: @articles }
+      format.json { render json: @articles }
+    end
   end
 
   def show

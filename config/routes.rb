@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root 'articles#index'
+  get 'articles/popular' => 'articles#popular'
   resources :articles do
     resources :comments
   end
