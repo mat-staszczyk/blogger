@@ -14773,3 +14773,4 @@ Processing by ArticlesController#index as HTML
   Rendered articles/index.html.erb within layouts/application (1.7ms)
   [1m[35mPage Load (0.1ms)[0m  SELECT "pages".* FROM "pages"
 Completed 200 OK in 79ms (Views: 77.4ms | ActiveRecord: 0.3ms)
+  [1m[36mPage Load (0.2ms)[0m  [1mSELECT  "pages".* FROM "pages"  ORDER BY "pages"."id" ASC LIMIT 1[0m
